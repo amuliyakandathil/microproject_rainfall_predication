@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainfall Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Rainfall Prediction</h1>
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <label for="temperature">Temperature (°C):</label>
+                <input type="number" id="temperature" name="temperature" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label for="dp_avg">DP Avg (°C):</label>
+                <input type="number" id="dp_avg" name="dp_avg" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label for="humidity">Humidity (%):</label>
+                <input type="number" id="humidity" name="humidity" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label for="slp">SLP (hPa):</label>
+                <input type="number" id="slp" name="slp" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label for="visibility">Visibility (km):</label>
+                <input type="number" id="visibility" name="visibility" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label for="wind">Wind Speed (m/s):</label>
+                <input type="number" id="wind" name="wind" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label for="rainfall">Previous Day Rainfall (mm):</label>
+                <input type="number" id="rainfall" name="rainfall" step="0.1" required>
+            </div>
+            <button type="submit">Predict Rainfall</button>
+        </form>
+        <div class="footer">
+            <p>Powered by RandomForestRegressor</p>
+        </div>
+    </div>
+</body>
+</html>
